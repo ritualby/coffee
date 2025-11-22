@@ -22,11 +22,11 @@ const FoodDetails = () => {
    const { user } = useAuth();
 
    useEffect(() => {
-      if (menus.length) {
+      if (menus.length && menuId) {
          const matchedData = menus.find((menu) => menu._id === menuId);
          setDetails(matchedData);
       }
-   }, [menus]);
+   }, [menus, menuId]);
 
    const { image, name, description, price } = details;
 
